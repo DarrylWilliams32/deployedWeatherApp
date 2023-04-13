@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--<a target="_blank" href="https://icons8.com/icon/c5dkPtMA4HiD/user-location">User Location</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darryl's Deployed Weather APP</title>
-    <link ref="stylesheet" href="styles.css">
-    <link href="resources\css\uicons-regular-rounded.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="uicons-regular-rounded.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
+ 
+<div class="container">
+    <div class="zip-search-box">
+        <i><img src="resources\icons8-user-location-48.png"></i>
+        <input type="number" placeholder="Enter your zip code">
+        <button class="fi-rr-search"></button>
+    </div>
 
-</header>
+    <!--creates a message if invalid zip code is input-->
+    <div class="city-not-found">
+        <img src="resources/images/404Error.jpg" width="400px">
+        <p>Oops! Invalid location   :/ </p>      
+    </div>
+
+    <!--this will display the actual weather information-->
+    <div class="weather-box">
+        <img src="">
+        <p class="temperature"></p>
+        <p class="description"></p>
+    </div>
+    
+    <!--creates a span to show humidty index-->
+    <div class="weather-details">
+        
+        
+    </div>
+    <!--creates a span to display wind speed-->
+
+    <div class="humidity">
+        <img src="resources/images/icons8-humidity-48.png">
+        <span></span>
+        <p>Humidity</p>
+    </div>
+    <div class="wind">
+        <img src="resources/images/icons8-wind-48.png">
+        <div class="text">
+            <span></span>
+            <p>Wind Speed</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
 </body>
+
 </html>

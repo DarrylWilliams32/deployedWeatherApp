@@ -1,4 +1,5 @@
 
+//**API KEY NEEDED!!!**/
 //creates function to facilitate the weather API
 const apiKey = 'YOUR_API_KEY';
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=YOUR_CITY&units=metric&appid=${apiKey}`;
