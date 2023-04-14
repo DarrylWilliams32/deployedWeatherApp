@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     border: 0;
@@ -6,25 +6,18 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F1E9FF;
+    background: #06283D;
 }
 
-header {
-    flex: none;
-    display: block;
-    margin: 25px;
-    justify-content: center;
-}
-
-.container {
+.container{
     position: relative;
-    width: 500px;
-    height: 80%;
+    width: 400px;
+    height: 105px;
     background: #fff;
     padding: 28px 32px;
     overflow: hidden;
@@ -79,14 +72,12 @@ header {
     font-size: 28px;
 }
 
-
-.weather-box {
+.weather-box{
     text-align: center;
 }
 
 .weather-box img{
-    width: 70%;
-    height: auto;
+    width: 60%;
     margin-top: 30px;
 }
 

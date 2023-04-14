@@ -6,17 +6,17 @@ const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () => {
 
-    const APIKey = 'b80f7718029ae9b03fc7cc661a0543a7';
+    const access_key = 'b80f7718029ae9b03fc7cc661a0543a7';
     const zipCode = document.querySelector('.zip-search-box input').value;
 
     if (zipCode === '')
         return;
 
-    fetch(`http://api.weatherstack.com/current?q=${zipCode}&units=metric&appid=${APIKey}`)
+    fetch(`http://api.weatherstack.com/current?access_key=${access_key}&query=${zipCode}&units=f`)
         .then(response => response.json())
         .then(json => {
 
-            if (json.cod === '404') {
+            if (json.error) {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
                 weatherDetails.style.display = 'none';
@@ -34,8 +34,7 @@ search.addEventListener('click', () => {
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
-            /**This will create the image switching based on weather reported */
-            switch (json.weather[0].main) {
+            switch (json.current.weather_descriptions[0]) {
                 case 'Clear':
                     image.src = 'resources/images/icons8-sun-96.png';
                     break;
@@ -49,7 +48,7 @@ search.addEventListener('click', () => {
                     break;
 
                 case 'Clouds':
-                    image.src = 'resources\images\icons8-partly-cloudy-day-96.png';
+                    image.src = 'resources/images/icons8-partly-cloudy-day-96.png';
                     break;
 
                 case 'Haze':
@@ -60,10 +59,10 @@ search.addEventListener('click', () => {
                     image.src = '';
             }
 
-            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
-            description.innerHTML = `${json.weather[0].description}`;
-            humidity.innerHTML = `${json.main.humidity}%`;
-            wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+            temperature.innerHTML = `${parseInt(json.current.temperature)}<span>°F</span>`;
+            description.innerHTML = `${json.current.weather_descriptions[0]}`;
+            humidity.innerHTML = `${json.current.humidity}%`;
+            wind.innerHTML = `${parseInt(json.current.wind_speed)}Km/h`;
 
             weatherBox.style.display = '';
             weatherDetails.style.display = '';
@@ -71,8 +70,7 @@ search.addEventListener('click', () => {
             weatherDetails.classList.add('fadeIn');
             container.style.height = '590px';
 
-
         });
 
-
 });
+
